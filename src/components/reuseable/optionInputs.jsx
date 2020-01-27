@@ -8,7 +8,7 @@ const OptionInputs = ({ direc, idx, optionState, handleoptionChange }) => {
   const valueText = direc === "rtl" ? "مقدار" : "value";
   return (
     <div key={`${valueText}-${idx}`}>
-      <label htmlFor={valueId}>{direc === "rtl" ? "برچسب" : "lable"}</label>
+      <label htmlFor={optionId}>{`${valueText} #${idx + 1}`}</label>
       <input
         type="text"
         className="value"
@@ -19,7 +19,8 @@ const OptionInputs = ({ direc, idx, optionState, handleoptionChange }) => {
         onChange={handleoptionChange}
         style={{ display: "inline", width: "30%" }}
       />
-      <label htmlFor={optionId}>{`${valueText} #${idx + 1}`}</label>
+
+      <label htmlFor={valueId}>{direc === "rtl" ? "برچسب" : "lable"}</label>
       <input
         type="text"
         className="label"
